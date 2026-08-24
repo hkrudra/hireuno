@@ -1,5 +1,9 @@
 # Hireuno - Full Stack Job Portal
+## 🌐 Live Demo
 
+**Live Website:** https://virtuous-purpose-production-4f12.up.railway.app
+
+**Backend API:** https://hireuno-production.up.railway.app/api/jobs
 Hireuno is a full-stack job portal application built using React, Spring Boot, and MySQL. It allows users to search and apply for jobs while administrators can manage jobs and candidate applications.
 
 ## Features
