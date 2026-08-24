@@ -10,7 +10,6 @@ import com.jobportal.security.JwtUtil;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,7 +27,6 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/applications")
-@CrossOrigin(origins = "http://localhost:5173")
 public class ApplicationController {
 
     private final ApplicationRepository applicationRepository;
@@ -89,7 +87,6 @@ public class ApplicationController {
         return ResponseEntity.ok(savedApplication);
     }
 
-    // ADMIN: view all applications with candidate + job details
     @GetMapping
     public ResponseEntity<?> getAllApplications(
             @RequestHeader("Authorization") String authorizationHeader) {
@@ -180,7 +177,6 @@ public class ApplicationController {
         return ResponseEntity.ok(response);
     }
 
-    // USER: view own applications with job details
     @GetMapping("/my")
     public ResponseEntity<?> getMyApplications(
             @RequestHeader("Authorization") String authorizationHeader) {
@@ -262,7 +258,6 @@ public class ApplicationController {
         return ResponseEntity.ok(response);
     }
 
-    // ADMIN: update application status
     @PutMapping("/{id}/status")
     public ResponseEntity<?> updateApplicationStatus(
             @PathVariable Long id,
